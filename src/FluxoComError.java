@@ -1,4 +1,4 @@
-public class FluxoComTratamento {
+public class FluxoComError {
 
     // Exemplo de código para pilhas de execução
     // inicio: main -> metodo1 -> metodo2
@@ -23,9 +23,6 @@ public class FluxoComTratamento {
         } catch (NullPointerException ex) {
             System.out.println("Erro: Objeto nulo ao chamar metodo2");
             ex.printStackTrace(); // imprime a exception no console
-        } catch (MinhaException ex) {
-            System.out.println("Erro: MinhaException ao chamar metodo2");
-            ex.printStackTrace(); // imprime a exception no console
         }
         System.out.println("Fim do metodo1");
     }
@@ -36,20 +33,10 @@ public class FluxoComTratamento {
     //	at Fluxo.metodo1(Fluxo.java:15)
     //	at Fluxo.main(Fluxo.java:9)
 
+    //criando um stack overflow error
     public static void metodo2(){
-        System.out.println("Ini do metodo2");
-
-        // criando uma exceção
-        //throw new ArithmeticException("Erro: Exception ArithmeticException");
-
-        // pode ser usado assim, porém o jeito acima é mais usado
-        // ArithmeticException exeception = new ArithmeticException("Erro: Exception ArithmeticException");
-        // throw exeception;
-
-        // utilizando minha exception
-        throw new MinhaException("Deu erro!");
-
-        // nunca vai ser executado com o throw exception acima
-        //System.out.println("Fim do metodo2");
+        System.out.println("Chamando metodo2");
+        metodo2();
+        System.out.println("Fim do metodo2");
     }
 }
