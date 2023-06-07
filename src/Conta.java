@@ -1,7 +1,7 @@
 public class Conta {
 
     private double saldo;
-    void deposita(){
+    void deposita() throws MinhaException {
         // código omitido
     }
 

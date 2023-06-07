@@ -1,4 +1,5 @@
-public class MinhaException extends RuntimeException{
+// teste com exception checked
+public class MinhaException extends Exception{
 
         public MinhaException(){
         }
